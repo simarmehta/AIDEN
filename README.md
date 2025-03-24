@@ -1,4 +1,4 @@
-# AIDEN - Your All-In-One Documentation Assistant
+# AIDEN - Your RAG Assistant
 
 AIDEN is an advanced **Retrieval-Augmented Generation (RAG)** application designed to streamline the process of ingesting, querying, and managing knowledge from diverse documentation sources.
 
