@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AIDEN - Vendor Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+
+  <style>
+    :root {
+      --primary-color: #0a84ff;
+      --primary-hover: #005ed9;
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --panel-bg: #1e1e1e;
+      --border-color: #333;
+      --shadow: rgba(255, 255, 255, 0.1);
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: var(--panel-bg);
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-speed);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero-header {
+      width: 100%;
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(10,132,255,0.25), transparent);
+      margin-bottom: 30px;
+    }
+
+    .hero-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .forms-section {
+      flex: 1;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px 40px;
+    }
+
+    .forms-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 100%;
+      max-width: 1400px; 
+      margin: 0 auto;
+    }
+
+    .container {
+      background: var(--panel-bg);
+      flex: 1 1 500px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px var(--shadow);
+    }
+
+    .container h2 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      background: #2b2b2b;
+      color: var(--text-color);
+      transition: background var(--transition-speed);
+      font-size: 0.95rem;
+    }
+
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      background: #333;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(135deg, #4a90e2, var(--primary-color));
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: all var(--transition-speed) ease-in-out;
+      box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      box-shadow: 0 5px 10px rgba(0, 123, 255, 0.5);
+      transform: scale(1.03);
+    }
+
+    button:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+    }
+
+    .status {
+      margin-top: 12px;
+      font-size: 14px;
+      color: lightgreen;
+      min-height: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: auto; 
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    footer a:hover {
+      color: var(--primary-hover);
+    }
+
+    @media (max-width: 800px) {
+      .hero-header h1 {
+        font-size: 2.2rem;
+      }
+      .hero-header p {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        flex: 1 1 100%;
+      }
+      .forms-wrapper {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">AIDEN</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/chat">Chatbot</a>
+      <a href="/vendor_registration"> Vendor Platform</a>
+    </div>
+  </nav>
+  <header class="hero-header">
+    <h1>Manage Your Vendors</h1>
+    <p>
+      Register new knowledge vendors or append new links to existing ones. 
+      Keep your docs organized and your private data secure in one place.
+    </p>
+  </header>
+  <section class="forms-section">
+    <div class="forms-wrapper">
+      <div class="container">
+        <h2>Register a New Vendor</h2>
+        <form id="registerVendorForm">
+          <label>Vendor Name:</label>
+          <input type="text" name="vendor_name" required>
+          <label>Domain:</label>
+          <input type="text" name="domain" placeholder="e.g. ml_research" required>
+          <label>Source Type:</label>
+          <select name="source_type">
+            <option value="web_scrape">Web Scrape</option>
+            <option value="pdf_links">PDF Links</option>
+            <option value="docx_upload">DOCX Upload</option>
+            <option value="plaintext">Plain Text</option>
+          </select>
+          <label>Source URLs (comma-separated):</label>
+          <textarea name="source_urls" rows="4" placeholder="https://arxiv.org/pdf/2411.02959, https://arxiv.org/pdf/2502.14902"></textarea>
+          <label>Chunk Strategy:</label>
+          <select name="chunk_strategy">
+            <option value="sentence">Sentence</option>
+            <option value="paragraph">Paragraph</option>
+          </select>
+          <label>Description:</label>
+<input type="text" name="description" placeholder="e.g. Node.js backend documentation" required>
+          <label style="font-weight: normal; margin-top: 10px;">
+            <input type="checkbox" name="is_private" value="true">
+            Make this vendor private
+          </label>
+
+          <button type="submit">Register Vendor</button>
+          <div id="statusRegister" class="status"></div>
+        </form>
+      </div>
+
+      <div class="container">
+        <h2>Append Links to Existing Vendor</h2>
+        <form id="appendLinksForm">
+          <label>Vendor Name (Existing):</label>
+          <input type="text" name="vendor_name" required>
+
+          <label>New Links (comma-separated):</label>
+          <textarea name="new_links" rows="4" placeholder="https://arxiv.org/pdf/2312.10997, https://arxiv.org/pdf/2005.11401"></textarea>
+
+          <button type="submit">Append Links</button>
+          <div id="statusAppend" class="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>AIDEN</p>
+  </footer>
+  <script>
+    document.getElementById("registerVendorForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const isPrivate = formData.get("is_private") === "true";
+      const payload = {
+        vendor_name: formData.get("vendor_name"),
+        domain: formData.get("domain"),
+        source_type: formData.get("source_type"),
+        source_urls: formData.get("source_urls").split(",").map(s => s.trim()),
+        chunk_strategy: formData.get("chunk_strategy"),
+        is_private: isPrivate,
+        description:formData.get("description")
+      };
+      try {
+        const res = await fetch("/register_vendor", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          throw new Error(`Error: ${res.status}`);
+        }
+        const data = await res.json();
+        document.getElementById("statusRegister").innerText = 
+          `Vendor registered! ID: ${data.vendor_id} (Ingestion started)`;
+      } catch (err) {
+        document.getElementById("statusRegister").innerText = 
+          `Error registering vendor: ${err.message}`;
+      }
+    });
+    document.getElementById("appendLinksForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+
+      const payload = {
+        vendor_name: formData.get("vendor_name"),
+        new_links: formData.get("new_links").split(",").map(s => s.trim())
+      };
+
+      try {
+        const res = await fetch("/append_vendor_links", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          throw new Error(`Error: ${res.status}`);
+        }
+        const data = await res.json();
+        document.getElementById("statusAppend").innerText = 
+          `Links appended! ${JSON.stringify(data)}`;
+      } catch (err) {
+        document.getElementById("statusAppend").innerText = 
+          `Error appending links: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

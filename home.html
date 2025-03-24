@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIDEN - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+
+  <style>
+    :root {
+      --primary-color: #0a84ff;
+      --primary-hover: #005ed9;
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --panel-bg: #1e1e1e;
+      --border-color: #333;
+      --shadow: rgba(255, 255, 255, 0.1);
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+  
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: var(--panel-bg);
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-speed);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(10,132,255,0.3), rgba(0,0,0,0));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      animation: fadeInDown 0.8s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      animation: fadeInDown 0.8s ease-in-out;
+      animation-delay: 0.2s;
+      animation-fill-mode: backwards;
+    }
+
+    .hero .cta-button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 14px 26px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+      animation: fadeInDown 0.8s ease-in-out;
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
+    }
+
+    .hero .cta-button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0, 123, 255, 0.5);
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      background: var(--panel-bg);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .feature-card {
+      background: #222;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px var(--shadow);
+      transition: transform var(--transition-speed);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #bbb;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    footer a:hover {
+      color: var(--primary-hover);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">AIDEN</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/chat">Chat</a>
+      <a href="/vendor_registration">Vendor Platform</a>
+      <!-- <a href="#">Contact</a> -->
+    </div>
+  </nav>
+  <section class="hero">
+    <h1>Revolutionize Your Documentation</h1>
+    <p>
+      AIDEN is your solution for a decentralized, modular knowledge platform. 
+      Seamlessly integrate private or public docs, retrieve answers in real time, and scale 
+      across multiple domains no matter how complex your data.
+    </p>
+    <button class="cta-button" onclick="location.href='/chat';">Try AIDEN Now</button>
+  </section>
+
+  <section class="features">
+    <h2>Why AIDEN?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Multi-Vendor Support</h3>
+        <p>
+          Integrate documentation from multiple sources or vendors, each with its own data. 
+          AIDEN merges knowledge for unified answers.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Private & Public Docs</h3>
+        <p>
+          Keep some knowledge private while making other docs publicly accessible. 
+          Query only what you need, when you need it.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Context-Only Answers</h3>
+        <p>
+          AIDEN ensures no hallucinations by restricting GPT to your ingested docs. 
+          If the answer isn’t in your data, it simply says so.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Lightning-Fast Retrieval</h3>
+        <p>
+          Powered by advanced vector search, AIDEN retrieves the best matches in milliseconds. 
+          Perfect for large-scale docs or research papers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>AIDEN</p>
+  </footer>
+
+</body>
+</html>
