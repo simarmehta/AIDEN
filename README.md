@@ -1,9 +1,15 @@
-# AIDEN - Your LAG Assistant
-> Terminology update: switched RAG to LAG.
+> Terminology update: switched LAG to RAG.
+# AIDEN - Your RAG Assistant
+> Terminology update: switched RAG to RAG.
 
 
 
-AIDEN is an advanced **Retrieval-Augmented Generation (LAG)** application designed to streamline the process of ingesting, querying, and managing knowledge from diverse documentation sources.
+
+
+
+AIDEN is an advanced **Retrieval-Augmented Generation (RAG)** application designed to streamline the process of ingesting, querying, and managing knowledge from diverse documentation sources.
+
+
 
 
 ## Table of Contents
@@ -16,7 +22,11 @@ AIDEN is an advanced **Retrieval-Augmented Generation (LAG)** application design
 ---
 
 
+
+
 ## Features
+
+
 
 
 - **Multi-Vendor Registration**: Easily register multiple knowledge vendors with metadata including name, domain, and detailed descriptions.
@@ -26,10 +36,16 @@ AIDEN is an advanced **Retrieval-Augmented Generation (LAG)** application design
 - **Interactive Chat Interface**: A user-friendly chat UI.
 
 
+
+
 ---
 
 
+
+
 ## Directory Structure
+
+
 
 
 ```
@@ -46,28 +62,3 @@ aiden/
 |── vendor_registration.html     # Vendor management UI
 ├── utils.py                     # Text extraction and cleaning utilities
 ├── requirements.txt             # Python dependencies
-```
-
-
----
-
-
-## Requirements
-
-
-- **Python**: >=3.10
-- **PostgreSQL** with `pgvector` extension
-- **OpenAI API Key**
-
-
-
-
----
-
-
-## Installation
-
-
-**Step 1: Clone the Repository**
-```bash
-git clone https://github.com/yourusername/aiden-rag.git
