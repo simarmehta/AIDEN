@@ -1,4 +1,4 @@
-> Terminology update: switched LAG to RAG.
+\n\n> This README was edited by an AI agent.> Terminology update: switched LAG to RAG.
 # AIDEN - Your RAG Assistant
 > Terminology update: switched RAG to RAG.
 
